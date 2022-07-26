@@ -43,6 +43,7 @@ namespace ConsoleApplication1
     }
     public class Config400
     {
+     
         public ObjectId Id { get; set; }
         public bool dataToDownload { get; set; }
         public bool dtm { get; set; }
@@ -68,8 +69,8 @@ namespace ConsoleApplication1
             configBase = Constant.configBase(this.config400.Id, this.configSensor.Id);
             
         }
-        public void tagInputExec()
-        { tagInput = Constant.tagInput(0, configBase.Id); }
+        public void tagInputExec(int id)
+        { tagInput = Constant.tagInput(id, configBase.Id); }
     }
 
     class Program
@@ -139,34 +140,43 @@ namespace ConsoleApplication1
 
             List<Config> config = new List<Config>()
             {
+                // ID
                 new Config(){ 
                     configSensor = Constant.configSensor[3],
                     config400 = Constant.config400[0],
-              /*      configBase = Constant.configBase(this.config400.Id,configSensor.Id),
-                    tagInput = Constant.tagInput(0,configBase.Id),
-              */
-
+                            },
+                new Config(){
+                    configSensor = Constant.configSensor[3],
+                    config400 = Constant.config400[1],
+                            },
+                // EDDYSTONE
+                new Config(){
+                    configSensor = Constant.configSensor[3],
+                    config400 = Constant.config400[0],
+          
+               
                             },
             };
-
+            int cpt = 0;
+            List<Config400> config4001 = new List<Config400>();
             foreach( Config element in config)
             {
-                collectionConfig400.InsertOne(element.config400);
-                collectionConfigSensor.InsertOne(element.configSensor);
-                element.configBaseExec();
-                collectionConfigBase.InsertOne(element.configBase);
-                element.tagInputExec();
-                collectionTagInput.InsertOne(element.tagInput);
+               
+                Config test = element;
+             //   test.config400.Id = ObjectId.Parse(cpt.ToString());// ObjectId.GenerateNewId();
+                config4001.Add(test.config400);
+                  Console.WriteLine("ok");
+                  collectionConfigSensor.InsertOne(element.configSensor);
+                 element.configBaseExec();
+                  collectionConfigBase.InsertOne(element.configBase);
+                  element.tagInputExec(cpt);
+                  collectionTagInput.InsertOne(element.tagInput);
+                  cpt++;
+                
+                Thread.Sleep(500);
+               
             }
-            
-
-      
-
-
-
-
-
-
+          //  collectionConfig400.InsertMany(config4001.ToArray());
         }
     }
 }

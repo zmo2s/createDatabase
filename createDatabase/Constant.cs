@@ -11,6 +11,8 @@ namespace createDatabase
 {
     public static class Constant
     {
+
+        public static int[] inputTagConstant =  { 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25 };
         public static ConfigSensor[] configSensor = {  
   
             new ConfigSensor() {
@@ -60,7 +62,22 @@ namespace createDatabase
                 framePlayloadNumber  = false,
                 periodeEmssionSecondaire = false,
                 periodeMesurCapteur = false
-            }, };
+            },
+        new Config400()
+            {
+                dataToDownload = true,
+                dtm =false,
+                eventDTM1 = false,
+                eventPeriod1 = false,
+                eventPeriod2 = false,
+                eventTx = false,
+                eventTxSeconde  = false,
+                framePlayloadNumber  = false,
+                periodeEmssionSecondaire = false,
+                periodeMesurCapteur = false
+            }
+
+        };
 
         public static ConfigBase[] configBases = { new ConfigBase
             {
