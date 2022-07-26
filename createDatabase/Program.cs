@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using createDatabase;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 using MongoDB.Driver;
@@ -62,6 +62,14 @@ namespace ConsoleApplication1
         public ConfigBase configBase;
         public Config400 config400;
         public ConfigSensor configSensor;
+
+        public void configBaseExec()
+        {
+            configBase = Constant.configBase(this.config400.Id, this.configSensor.Id);
+            
+        }
+        public void tagInputExec()
+        { tagInput = Constant.tagInput(0, configBase.Id); }
     }
 
     class Program
@@ -75,7 +83,7 @@ namespace ConsoleApplication1
             var collectionConfigSensor = database.GetCollection<ConfigSensor>("ConfigSensor");
             var collectionConfig400 = database.GetCollection<Config400>("Config400");
             
-            
+            /*
 
             Config400 config400 = new Config400()
             {
@@ -123,104 +131,38 @@ namespace ConsoleApplication1
                 configBase = new MongoDBRef("ConfigBase", configBase.Id)
             };
 
-
-            List<Config> config = new List<Config>()
-            {
-                new Config(){ configSensor = new ConfigSensor() {
-                dureeAiTotOut = true,
-                modeMag = true,
-                sesibilitePir = true
-                },
-                       config400 = new Config400()
-            {
-                dataToDownload = true,
-                dtm =true,
-                eventDTM1 = true,
-                eventPeriod1 = true,
-                eventPeriod2 = true,
-                eventTx = true,
-                eventTxSeconde  = true,
-                framePlayloadNumber  = true,
-                periodeEmssionSecondaire = true,
-                periodeMesurCapteur = true
-            },
-                      configBase = new ConfigBase
-            {
-                dureeEvent = true,
-                isActivateTag = true,
-                isLoggerActivate = true,
-                puissanceDbm = true,
-                recurrenceAdvertising = true,
-                recurrenceEvent = true,
-                recurrenceLog = true,
-                useBUzzer = true,
-                useLED = true,
-                useModConnected = true,
-                config400 = new MongoDBRef("Config400", config400.Id),
-                configSensor = new MongoDBRef("ConfigSensor", configSensor.Id),
-            },
-                      tagInput = new TagInput
-            {
-                format = "ID",
-                model = "PUCK",
-                version = "4.0.0",
-                configBase = new MongoDBRef("ConfigBase", configBase.Id)
-            }
-        },
-
-
-                    new Config(){ configSensor = new ConfigSensor() {
-                dureeAiTotOut = true,
-                modeMag = true,
-                sesibilitePir = true
-                },
-                       config400 = new Config400()
-            {
-                dataToDownload = true,
-                dtm =true,
-                eventDTM1 = true,
-                eventPeriod1 = true,
-                eventPeriod2 = true,
-                eventTx = true,
-                eventTxSeconde  = true,
-                framePlayloadNumber  = true,
-                periodeEmssionSecondaire = true,
-                periodeMesurCapteur = true
-            },
-                      configBase = new ConfigBase
-            {
-                dureeEvent = true,
-                isActivateTag = true,
-                isLoggerActivate = true,
-                puissanceDbm = true,
-                recurrenceAdvertising = true,
-                recurrenceEvent = true,
-                recurrenceLog = true,
-                useBUzzer = true,
-                useLED = true,
-                useModConnected = true,
-                config400 = new MongoDBRef("Config400", config400.Id),
-                configSensor = new MongoDBRef("ConfigSensor", configSensor.Id),
-            },
-                      tagInput = new TagInput
-            {
-                format = "ID",
-                model = "PUCK",
-                version = "4.0.0",
-                configBase = new MongoDBRef("ConfigBase", configBase.Id)
-            }
-        },
-
-
-            };
-           
-            
-            
-
-            collectionConfig400.InsertOne(config400);
+            /*collectionConfig400.InsertOne(config400);
             collectionConfigSensor.InsertOne(configSensor);
             collectionConfigBase.InsertOne(configBase);
             collectionTagInput.InsertOne(tagInput);
+            */
+
+            List<Config> config = new List<Config>()
+            {
+                new Config(){ 
+                    configSensor = Constant.configSensor[3],
+                    config400 = Constant.config400[0],
+              /*      configBase = Constant.configBase(this.config400.Id,configSensor.Id),
+                    tagInput = Constant.tagInput(0,configBase.Id),
+              */
+
+                            },
+            };
+
+            foreach( Config element in config)
+            {
+                collectionConfig400.InsertOne(element.config400);
+                collectionConfigSensor.InsertOne(element.configSensor);
+                element.configBaseExec();
+                collectionConfigBase.InsertOne(element.configBase);
+                element.tagInputExec();
+                collectionTagInput.InsertOne(element.tagInput);
+            }
+            
+
+      
+
+
 
 
 

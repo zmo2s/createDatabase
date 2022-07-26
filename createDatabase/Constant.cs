@@ -1,4 +1,6 @@
 ﻿using ConsoleApplication1;
+using MongoDB.Bson;
+using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,32 +9,34 @@ using System.Threading.Tasks;
 
 namespace createDatabase
 {
-    public class Constant
+    public static class Constant
     {
-        public ConfigSensor[] cars = {  new ConfigSensor() {
-                dureeAiTotOut = false,
-                modeMag = false,
-                sesibilitePir = false,
-        },
+        public static ConfigSensor[] configSensor = {  
+  
             new ConfigSensor() {
                 dureeAiTotOut = true,
                 modeMag = false,
                 sesibilitePir = false,
         },
-                        new ConfigSensor() {
+            new ConfigSensor() {
                 dureeAiTotOut = false,
                 modeMag = true,
                 sesibilitePir = false,
         },
-                                    new ConfigSensor() {
+            new ConfigSensor() {
                 dureeAiTotOut = false,
                 modeMag = false,
                 sesibilitePir = true,
+        },
+                      new ConfigSensor() {
+                dureeAiTotOut = false,
+                modeMag = false,
+                sesibilitePir = false,
         }
         };
 
 
-        public Config400[] config400 = { new Config400()
+        public static Config400[] config400 = { new Config400()
             {
                 dataToDownload = true,
                 dtm =true,
@@ -58,7 +62,68 @@ namespace createDatabase
                 periodeMesurCapteur = false
             }, };
 
+        public static ConfigBase[] configBases = { new ConfigBase
+            {
+                dureeEvent = true,
+                isActivateTag = true,
+                isLoggerActivate = true,
+                puissanceDbm = true,
+                recurrenceAdvertising = true,
+                recurrenceEvent = true,
+                recurrenceLog = true,
+                useBUzzer = true,
+                useLED = true,
+                useModConnected = true,
+            //  config400 = new MongoDBRef("Config400", config400.Id),
+            //  configSensor = new MongoDBRef("ConfigSensor", configSensor.Id),
+                                            } 
+            };
+        public static TagInput[] tagInputs =
+        {
+            new TagInput
+            {
+                format = "ID",
+                model = "PUCK",
+                version = "2.0.0",
+            }, new TagInput
+            {
+                format = "ID",
+                model = "PUCK",
+                version = "4.0.0",
+            }
+        };
 
+
+
+        public static ConfigBase configBase(ObjectId config400, ObjectId configSensor)
+        
+          {
+            return new ConfigBase
+            {
+                dureeEvent = true,
+                isActivateTag = true,
+                isLoggerActivate = true,
+                puissanceDbm = true,
+                recurrenceAdvertising = true,
+                recurrenceEvent = true,
+                recurrenceLog = true,
+                useBUzzer = true,
+                useLED = true,
+                useModConnected = true,
+                config400 = new MongoDBRef("Config400", config400),
+                configSensor = new MongoDBRef("ConfigSensor", configSensor),
+            };
+            }
+
+        public static TagInput tagInput(int id, ObjectId configBase)
+        {
+            TagInput tagInput = tagInputs[id];
+            tagInput.configBase = new MongoDBRef("ConfigBase", configBase);
+            return tagInput;
+        }
+
+
+    }
        
     }
-}
+
