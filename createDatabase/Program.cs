@@ -166,7 +166,9 @@ namespace ConsoleApplication1
              //   test.config400.Id = ObjectId.Parse(cpt.ToString());// ObjectId.GenerateNewId();
                 config4001.Add(test.config400);
                   Console.WriteLine("ok");
-                  collectionConfigSensor.InsertOne(element.configSensor);
+
+                collectionConfig400.InsertOne(element.config400);
+                collectionConfigSensor.InsertOne(element.configSensor);
                  element.configBaseExec();
                   collectionConfigBase.InsertOne(element.configBase);
                   element.tagInputExec(cpt);
