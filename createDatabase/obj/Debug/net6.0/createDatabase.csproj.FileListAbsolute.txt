@@ -30,3 +30,35 @@ C:\Developpements\Github\createDatabase\createDatabase\bin\Debug\net6.0\runtimes
 C:\Developpements\Github\createDatabase\createDatabase\bin\Debug\net6.0\runtimes\osx\native\libmongocrypt.dylib
 C:\Developpements\Github\createDatabase\createDatabase\bin\Debug\net6.0\runtimes\win\native\mongocrypt.dll
 C:\Developpements\Github\createDatabase\createDatabase\obj\Debug\net6.0\createDatabase.csproj.CopyComplete
+C:\Users\anto9\OneDrive\Bureau\Nouveau dossier (11)\createDatabase-main\createDatabase\bin\Debug\net6.0\createDatabase.exe
+C:\Users\anto9\OneDrive\Bureau\Nouveau dossier (11)\createDatabase-main\createDatabase\bin\Debug\net6.0\createDatabase.deps.json
+C:\Users\anto9\OneDrive\Bureau\Nouveau dossier (11)\createDatabase-main\createDatabase\bin\Debug\net6.0\createDatabase.runtimeconfig.json
+C:\Users\anto9\OneDrive\Bureau\Nouveau dossier (11)\createDatabase-main\createDatabase\bin\Debug\net6.0\createDatabase.dll
+C:\Users\anto9\OneDrive\Bureau\Nouveau dossier (11)\createDatabase-main\createDatabase\bin\Debug\net6.0\ref\createDatabase.dll
+C:\Users\anto9\OneDrive\Bureau\Nouveau dossier (11)\createDatabase-main\createDatabase\bin\Debug\net6.0\createDatabase.pdb
+C:\Users\anto9\OneDrive\Bureau\Nouveau dossier (11)\createDatabase-main\createDatabase\bin\Debug\net6.0\DnsClient.dll
+C:\Users\anto9\OneDrive\Bureau\Nouveau dossier (11)\createDatabase-main\createDatabase\bin\Debug\net6.0\MongoDB.Bson.dll
+C:\Users\anto9\OneDrive\Bureau\Nouveau dossier (11)\createDatabase-main\createDatabase\bin\Debug\net6.0\MongoDB.Driver.dll
+C:\Users\anto9\OneDrive\Bureau\Nouveau dossier (11)\createDatabase-main\createDatabase\bin\Debug\net6.0\MongoDB.Driver.Core.dll
+C:\Users\anto9\OneDrive\Bureau\Nouveau dossier (11)\createDatabase-main\createDatabase\bin\Debug\net6.0\MongoDB.Libmongocrypt.dll
+C:\Users\anto9\OneDrive\Bureau\Nouveau dossier (11)\createDatabase-main\createDatabase\bin\Debug\net6.0\SharpCompress.dll
+C:\Users\anto9\OneDrive\Bureau\Nouveau dossier (11)\createDatabase-main\createDatabase\bin\Debug\net6.0\runtimes\linux\native\libsnappy64.so
+C:\Users\anto9\OneDrive\Bureau\Nouveau dossier (11)\createDatabase-main\createDatabase\bin\Debug\net6.0\runtimes\linux\native\libzstd.so
+C:\Users\anto9\OneDrive\Bureau\Nouveau dossier (11)\createDatabase-main\createDatabase\bin\Debug\net6.0\runtimes\osx\native\libsnappy64.dylib
+C:\Users\anto9\OneDrive\Bureau\Nouveau dossier (11)\createDatabase-main\createDatabase\bin\Debug\net6.0\runtimes\osx\native\libzstd.dylib
+C:\Users\anto9\OneDrive\Bureau\Nouveau dossier (11)\createDatabase-main\createDatabase\bin\Debug\net6.0\runtimes\win\native\libzstd.dll
+C:\Users\anto9\OneDrive\Bureau\Nouveau dossier (11)\createDatabase-main\createDatabase\bin\Debug\net6.0\runtimes\win\native\snappy32.dll
+C:\Users\anto9\OneDrive\Bureau\Nouveau dossier (11)\createDatabase-main\createDatabase\bin\Debug\net6.0\runtimes\win\native\snappy64.dll
+C:\Users\anto9\OneDrive\Bureau\Nouveau dossier (11)\createDatabase-main\createDatabase\bin\Debug\net6.0\runtimes\linux\native\libmongocrypt.so
+C:\Users\anto9\OneDrive\Bureau\Nouveau dossier (11)\createDatabase-main\createDatabase\bin\Debug\net6.0\runtimes\osx\native\libmongocrypt.dylib
+C:\Users\anto9\OneDrive\Bureau\Nouveau dossier (11)\createDatabase-main\createDatabase\bin\Debug\net6.0\runtimes\win\native\mongocrypt.dll
+C:\Users\anto9\OneDrive\Bureau\Nouveau dossier (11)\createDatabase-main\createDatabase\obj\Debug\net6.0\createDatabase.csproj.AssemblyReference.cache
+C:\Users\anto9\OneDrive\Bureau\Nouveau dossier (11)\createDatabase-main\createDatabase\obj\Debug\net6.0\createDatabase.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\anto9\OneDrive\Bureau\Nouveau dossier (11)\createDatabase-main\createDatabase\obj\Debug\net6.0\createDatabase.AssemblyInfoInputs.cache
+C:\Users\anto9\OneDrive\Bureau\Nouveau dossier (11)\createDatabase-main\createDatabase\obj\Debug\net6.0\createDatabase.AssemblyInfo.cs
+C:\Users\anto9\OneDrive\Bureau\Nouveau dossier (11)\createDatabase-main\createDatabase\obj\Debug\net6.0\createDatabase.csproj.CoreCompileInputs.cache
+C:\Users\anto9\OneDrive\Bureau\Nouveau dossier (11)\createDatabase-main\createDatabase\obj\Debug\net6.0\createDatabase.csproj.CopyComplete
+C:\Users\anto9\OneDrive\Bureau\Nouveau dossier (11)\createDatabase-main\createDatabase\obj\Debug\net6.0\createDatabase.dll
+C:\Users\anto9\OneDrive\Bureau\Nouveau dossier (11)\createDatabase-main\createDatabase\obj\Debug\net6.0\ref\createDatabase.dll
+C:\Users\anto9\OneDrive\Bureau\Nouveau dossier (11)\createDatabase-main\createDatabase\obj\Debug\net6.0\createDatabase.pdb
+C:\Users\anto9\OneDrive\Bureau\Nouveau dossier (11)\createDatabase-main\createDatabase\obj\Debug\net6.0\createDatabase.genruntimeconfig.cache

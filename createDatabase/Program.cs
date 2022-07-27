@@ -43,7 +43,7 @@ namespace ConsoleApplication1
     }
     public class Config400
     {
-     
+
         public ObjectId Id { get; set; }
         public bool dataToDownload { get; set; }
         public bool dtm { get; set; }
@@ -67,7 +67,7 @@ namespace ConsoleApplication1
         public void configBaseExec()
         {
             configBase = Constant.configBase(this.config400.Id, this.configSensor.Id);
-            
+
         }
         public void tagInputExec(int id)
         { tagInput = Constant.tagInput(id, configBase.Id); }
@@ -83,9 +83,8 @@ namespace ConsoleApplication1
             var collectionConfigBase = database.GetCollection<ConfigBase>("ConfigBase");
             var collectionConfigSensor = database.GetCollection<ConfigSensor>("ConfigSensor");
             var collectionConfig400 = database.GetCollection<Config400>("Config400");
-            
-            /*
 
+            /*
             Config400 config400 = new Config400()
             {
                 dataToDownload = true,
@@ -107,7 +106,6 @@ namespace ConsoleApplication1
                 sesibilitePir = true
             };
             
-
             ConfigBase configBase = new ConfigBase
             {
                 dureeEvent = true,
@@ -131,7 +129,6 @@ namespace ConsoleApplication1
                 version = "4.0.0",
                 configBase = new MongoDBRef("ConfigBase", configBase.Id)
             };
-
             /*collectionConfig400.InsertOne(config400);
             collectionConfigSensor.InsertOne(configSensor);
             collectionConfigBase.InsertOne(configBase);
@@ -141,7 +138,7 @@ namespace ConsoleApplication1
             List<Config> config = new List<Config>()
             {
                 // ID
-                new Config(){ 
+                new Config(){
                     configSensor = Constant.configSensor[3],
                     config400 = Constant.config400[0],
                             },
@@ -153,32 +150,37 @@ namespace ConsoleApplication1
                 new Config(){
                     configSensor = Constant.configSensor[3],
                     config400 = Constant.config400[0],
-          
-               
+
+
                             },
             };
             int cpt = 0;
             List<Config400> config4001 = new List<Config400>();
-            foreach( Config element in config)
+         
+            foreach (Config element in config)
             {
-               
-                Config test = element;
-             //   test.config400.Id = ObjectId.Parse(cpt.ToString());// ObjectId.GenerateNewId();
-                config4001.Add(test.config400);
-                  Console.WriteLine("ok");
 
-                collectionConfig400.InsertOne(element.config400);
-                collectionConfigSensor.InsertOne(element.configSensor);
-                 element.configBaseExec();
-                  collectionConfigBase.InsertOne(element.configBase);
-                  element.tagInputExec(cpt);
-                  collectionTagInput.InsertOne(element.tagInput);
-                  cpt++;
-                
-                Thread.Sleep(500);
+                Config test = element;
+                //   test.config400.Id = ObjectId.Parse(cpt.ToString());// ObjectId.GenerateNewId();
+                config4001.Add(test.config400);
+                Console.WriteLine("ok");
                
+                collectionConfig400.InsertOne(element.config400);
+                element.config400.Id = ObjectId.GenerateNewId();
+                collectionConfigSensor.InsertOne(element.configSensor);
+                element.configSensor.Id = ObjectId.GenerateNewId();
+                element.configBaseExec();
+                collectionConfigBase.InsertOne(element.configBase);
+                element.configBase.Id = ObjectId.GenerateNewId();
+                element.tagInputExec(cpt);
+                collectionTagInput.InsertOne(element.tagInput);
+                element.tagInput.Id = ObjectId.GenerateNewId();
+                cpt++;
+
+                Thread.Sleep(500);
+
             }
-          //  collectionConfig400.InsertMany(config4001.ToArray());
+            //  collectionConfig400.InsertMany(config4001.ToArray());
         }
     }
 }
