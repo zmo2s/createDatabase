@@ -233,6 +233,7 @@ namespace createDatabase
                 format = "PROXIR",
                 model = "PUCK",
                 version = "4.0.0",
+               // configBase =
             },
         };
         public static ConfigBase configBase(ObjectId config400, ObjectId configSensor)

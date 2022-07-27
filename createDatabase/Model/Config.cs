@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MongoDB.Bson;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,7 @@ namespace createDatabase.Model
 {
     public class Config
     {
+     
         public TagInput tagInput;
         public ConfigBase configBase;
         public Config400 config400;
@@ -15,10 +17,10 @@ namespace createDatabase.Model
 
         public void configBaseExec()
         {
-            configBase = Constant.configBase(this.config400.Id, this.configSensor.Id);
+            configBase = Constant.configBase(this.config400._id, this.configSensor._id);
 
         }
         public void tagInputExec(int id)
-        { tagInput = Constant.tagInput(id, configBase.Id); }
+        { tagInput = Constant.tagInput(id, configBase._id); }
     }
 }

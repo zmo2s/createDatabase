@@ -25,15 +25,18 @@ namespace ConsoleApplication1
             foreach (Config element in Constant.config)
             {
                 collectionConfig400.InsertOne(element.config400);
-                element.config400.Id = ObjectId.GenerateNewId();
+               
                 collectionConfigSensor.InsertOne(element.configSensor);
-                element.configSensor.Id = ObjectId.GenerateNewId();
+             
                 element.configBaseExec();
                 collectionConfigBase.InsertOne(element.configBase);
-                element.configBase.Id = ObjectId.GenerateNewId();
+                
                 element.tagInputExec(cpt);
                 collectionTagInput.InsertOne(element.tagInput);
-                element.tagInput.Id = ObjectId.GenerateNewId();
+                element.config400._id = ObjectId.GenerateNewId();
+                element.configSensor._id = ObjectId.GenerateNewId();
+                element.configBase._id = ObjectId.GenerateNewId();
+                element.tagInput._id = ObjectId.GenerateNewId();
                 cpt++;
                 Thread.Sleep(500);
             }

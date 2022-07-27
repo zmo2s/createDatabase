@@ -1,4 +1,5 @@
 ﻿using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,8 +10,8 @@ namespace createDatabase.Model
 {
     public class Config400
     {
-
-        public ObjectId Id { get; set; }
+        [BsonId]
+        public ObjectId _id { get; set; }
         public bool dataToDownload { get; set; }
         public bool dtm { get; set; }
         public bool eventDTM1 { get; set; }

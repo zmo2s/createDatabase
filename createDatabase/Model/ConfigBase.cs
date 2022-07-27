@@ -1,4 +1,5 @@
 ﻿using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
 using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
@@ -10,7 +11,8 @@ namespace createDatabase.Model
 {
     public class ConfigBase
     {
-        public ObjectId Id { get; set; }
+        [BsonId]
+        public ObjectId _id { get; set; }
         public bool dureeEvent { get; set; }
         public bool isActivateTag { get; set; }
         public bool isLoggerActivate { get; set; }
