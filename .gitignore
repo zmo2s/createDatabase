@@ -1,0 +1,4 @@
+/packages/
+/.vs/
+/createDatabase/bin/
+/createDatabase/obj/
