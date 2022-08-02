@@ -16,24 +16,24 @@ namespace createDatabase
         public static ConfigSensor[] configSensor =
             {
             new ConfigSensor() {
-                dureeAiTotOut = true,
+                dureeAiTorOut = true,
                 modeMag = false,
-                sesibilitePir = false,
+                sensibilitePir = false,
         },
             new ConfigSensor() {
-                dureeAiTotOut = false,
+                dureeAiTorOut = false,
                 modeMag = true,
-                sesibilitePir = false,
+                sensibilitePir = false,
         },
             new ConfigSensor() {
-                dureeAiTotOut = false,
+                dureeAiTorOut = false,
                 modeMag = false,
-                sesibilitePir = true,
+                sensibilitePir = true,
         },
                       new ConfigSensor() {
-                dureeAiTotOut = false,
+                dureeAiTorOut = false,
                 modeMag = false,
-                sesibilitePir = false,
+                sensibilitePir = false,
                                         }
         };
         public static Config400[] config400 = {
@@ -318,8 +318,8 @@ namespace createDatabase
                     config400 = Constant.config400[0],
                             },
                 new Config(){
-                    configSensor = Constant.configSensor[0],
-                    config400 = Constant.config400[0],
+                    configSensor = Constant.configSensor[1],
+                    config400 = Constant.config400[1],
                             },
                 // MOV
                 new Config(){
@@ -341,11 +341,11 @@ namespace createDatabase
                             },
                 // TOROUT
                 new Config(){
-                    configSensor = Constant.configSensor[2],
+                    configSensor = Constant.configSensor[3],
                     config400 = Constant.config400[0],
                             },
                 new Config(){
-                    configSensor = Constant.configSensor[2],
+                    configSensor = Constant.configSensor[0],
                     config400 = Constant.config400[1],
                             },
                 // AI
@@ -373,7 +373,7 @@ namespace createDatabase
                             },
                 // PIR
                 new Config(){
-                    configSensor = Constant.configSensor[1],
+                    configSensor = Constant.configSensor[2],
                     config400 = Constant.config400[1],
                             },
                 // PROXIR

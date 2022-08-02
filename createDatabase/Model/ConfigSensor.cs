@@ -12,8 +12,8 @@ namespace createDatabase.Model
     {
         [BsonId]
         public ObjectId _id { get; set; }
-        public bool dureeAiTotOut { get; set; }
+        public bool dureeAiTorOut { get; set; }
         public bool modeMag { get; set; }
-        public bool sesibilitePir { get; set; }
+        public bool sensibilitePir { get; set; }
     }
 }
