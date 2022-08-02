@@ -37,7 +37,19 @@ namespace createDatabase
                                         }
         };
         public static Config400[] config400 = {
-
+                         new Config400()
+            {
+                dataToDownload = false,
+                dtm =false,
+                eventDTM1 = false,
+                eventPeriod1 = false,
+                eventPeriod2 = false,
+                eventTx = false,
+                eventTxSeconde  = false,
+                framePlayloadNumber  = false,
+                periodeEmssionSecondaire = false,
+                periodeMesurCapteur = false
+            },
 
                         new Config400()
             {
@@ -53,19 +65,7 @@ namespace createDatabase
                 periodeMesurCapteur = true
             },
 
-             new Config400()
-            {
-                dataToDownload = false,
-                dtm =false,
-                eventDTM1 = false,
-                eventPeriod1 = false,
-                eventPeriod2 = false,
-                eventTx = false,
-                eventTxSeconde  = false,
-                framePlayloadNumber  = false,
-                periodeEmssionSecondaire = false,
-                periodeMesurCapteur = false
-            },
+
 
      
         };
